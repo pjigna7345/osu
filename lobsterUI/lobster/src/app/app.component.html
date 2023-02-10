@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card  my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-black py-3">{{ title }}</h2>
+            <div class="row text-center">
+              <div class="col-md-12">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let lobster of lobsters">
+                      <td>{{lobster.id}}</td>
+                      <td>{{lobster.name}}</td>
+                      <td>{{lobster.type}}</td>
+                      <td>
+                        <button class="btn btn-primary px-4 mx-3"><span class="glyphicon glyphicon-star"></span> Edit</button>
+                        <button class="btn btn-danger px-4 mx-3" (click)="deleteLobster(lobster.id)">Delete</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>            
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
